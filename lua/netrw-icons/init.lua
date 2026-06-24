@@ -137,7 +137,7 @@ local default = {
 	icon_fallback = true,
 	file = {
 		dir = " ",
-		sym = " ",
+		sym = { " ", "Special" },
 		exe = " ",
 	},
 }
