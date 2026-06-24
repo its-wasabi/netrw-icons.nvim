@@ -122,14 +122,6 @@ require("netrw-icons").setup({
 })
 ```
 
-#### No Icons (Disable Plugin)
-
-```lua
-require("netrw-icons").setup({
-  file = false, -- Completely disable icons
-})
-```
-
 ## Supported Netrw List Styles
 
 Currently, this plugin supports:
