@@ -135,6 +135,7 @@ local default = {
 	prefer = nil,
 
 	icon_fallback = true,
+
 	file = {
 		dir = " ",
 		sym = { " ", "Special" },

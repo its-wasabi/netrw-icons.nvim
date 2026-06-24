@@ -58,41 +58,33 @@ Plug 'Fasamii/netrw-icons.nvim'
 lua require("netrw-icons").setup()
 ```
 
-
 ## Configuration
 
 ### Default Configuration
 
 ```lua
 require("netrw-icons").setup({
-  -- Icon provider preference: "devicons", "miniicons", or nil for auto-detect
-  prefer = nil,
+    -- Icon provider preference: "devicons", "miniicons", or nil for auto-detect
+    prefer = nil,
   
-  -- Show generic file icon when no specific icon is found for a file type
-  icon_fallback = true,
+    -- Show generic file icon when no specific icon is found for a file type
+    icon_fallback = true,
   
-  -- Icon definitions
-  file = { -- If you don't have any overrides you can just set to true
     -- Custom icons per file extension
     -- Can be a string (icon only) or a table { icon, highlight_group }
-    -- for example: lua = {"WOAH: ", "Function"},
-    -- or lua = { "WOAH: " },
+    -- for example: lua = { "WOAH: " },
+    -- or: lua = {"WOAH: ", "Normal"},
+    file = {
 
-    -- Reserved keys for special file types
-    dir = " ",  -- Directory icon
-    sym = "",  -- Symlink icon
-    exe = "",  -- Executable icon
-  },
+        -- Reserved keys for special file types
+        dir = " ", -- Directory icon
+        sym = { " ", "Special" }, -- Symlink icon
+        exe = " ", -- Executable icon
+    },
 })
 ```
 
 ### Configuration Examples
-
-#### Minimal Setup
-
-```lua
-require("netrw-icons").setup()
-```
 
 #### Prefer Specific Icon Provider
 
@@ -109,14 +101,14 @@ require("netrw-icons").setup({
   file = {
     dir = " ",
     sym = " ",
-    exe = "EXEHERE: ",
+    exe = "EXE FILE HERE: ",
     
-    -- String format (icon only)
     lua = "LUA ---->",
     md = " ",
     
     -- Table format (icon + highlight group)
     ts = { "󰛦 ", "Type" },
+    js = { "󰛦 ", "Keyword" },
   },
 })
 ```
@@ -151,6 +143,8 @@ To set style of netrw:
 " In init.vim
 let g:netrw_liststyle = 3 " or 0 or 1
 ```
+
+Or for neovim:
 
 ```lua
 -- In init.lua
